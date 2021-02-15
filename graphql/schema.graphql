@@ -1,0 +1,17 @@
+#sdf
+type Movie {
+  id: Int!
+  name: String!
+  score: Int!
+}
+
+type Query {
+  movies: [Movie]!
+  movie(id: Int!): Movie
+}
+
+#Mutation: DB상태가 변할 때 사용
+type Mutation {
+  addMovie(name: String!, score: Int!): Movie  #* id는 데이터 추가 시 자동생성. return Movie
+  deleteMovie(id: Int!): Boolean
+}
